@@ -41,9 +41,28 @@ Kmeans算法正是基于这一思想而生，让数据通过某种算法聚集�
 
 
 
+在概率论和统计学中，Bayes’ theorem（贝叶斯法则）根据事件的先验知识描述事件的概率。贝叶斯法则表达式如下所示
+
+![img](https://img-blog.csdn.net/20180704164540248?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p3cWpveQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+朴素贝叶斯分类的正式定义如下：
+
+1、设![img](http://latex.codecogs.com/gif.latex?x=%5C%7Ba_1,a_2,...,a_m%5C%7D)为一个待分类项，而每个a为x的一个特征属性。
+
+2、有类别集合![img](http://latex.codecogs.com/gif.latex?C=%5C%7By_1,y_2,...,y_n%5C%7D)。
+
+3、计算![img](http://latex.codecogs.com/gif.latex?P(y_1%7Cx),P(y_2%7Cx),...,P(y_n%7Cx))。
+
+4、如果![img](http://latex.codecogs.com/gif.latex?P(y_k%7Cx)=max%5C%7BP(y_1%7Cx),P(y_2%7Cx),...,P(y_n%7Cx)%5C%7D)，则![img](http://latex.codecogs.com/gif.latex?x%20%5Cin%20y_k)。
+
+**朴素贝叶斯算法对条件概率分布作出了独立性的假设**，通俗地讲就是说假设各个维度的特征*x*1,*x*2,...,*x**n*互相独立，在这个假设的前提上，可以简化计算规模，减小运算量。
+
+
+
 
 
 ### 降维算法 Dimensional Reduction
+
 (PCA)是最常用的线性降维方法，它的目标是通过某种线性投影，将高维的数据映射到低维的空间中表示，并期望在所投影的维度上数据的方差最大，以此使用较少的数据维度，同时保留住较多的原数据点的特性。
 [PCA原理讲解，很详细](https://blog.csdn.net/lijihw/article/details/46622667?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-6&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-6)
 回顾了一下线代知识和数理统计。 统计学厉害，数学厉害。
