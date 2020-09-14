@@ -27,6 +27,8 @@ def stdev(numbers):
     avg = mean(numbers)
     variance = sum([pow(x-avg,2) for x in numbers])/float(len(numbers)-1)
     return math.sqrt(variance)
+
+
 def summarize(dataset):
     summaries = [(mean(attribute), stdev(attribute)) for attribute in  zip(*dataset)]
     del summaries[-1]
@@ -41,6 +43,7 @@ def summarize_by_class(dataset):
     summaries = {}
     keyList = list(separated.keys())
     for classValue in keyList:
+
         summaries[classValue] = summarize(separated[classValue])
     return summaries
  
@@ -66,6 +69,7 @@ def calculate_class_probabilities(summaries, inputVector):
  
 #5.单个数据样本的预测. 找到最大的概率值,返回关联的类
 def predict(summaries, inputVector):
+    print(summaries, inputVector)
     probabilities = calculate_class_probabilities(summaries, inputVector)
     bestLabel, bestProb = None, -1
     keyList = list(probabilities.keys())
@@ -110,7 +114,8 @@ def main():
  
     #计算模型
     summaries = summarize_by_class(trainSet)
- 
+
+
     #用测试数据集测试模型
     predictions = get_predictions(summaries, testSet)
     accuracy = get_accuracy(testSet, predictions)
@@ -119,3 +124,9 @@ def main():
  
 if __name__ == '__main__':
     main()
+
+
+
+"""
+这里假设了x每个属性符合某个分布， 好像是正态分布。然后好计算相关分布。
+"""
